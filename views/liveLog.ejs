@@ -1,0 +1,86 @@
+<%- include('header/head.ejs') %>
+<body id="page-top">
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+
+    <%- include('header/sidebar.ejs') %>
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+        <%- include('header/topbar.ejs') %>
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+          <!-- Page Heading -->
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">Live Log</h1>
+          </div>
+
+           <!-- Area Chart -->
+           <div class="col-xl-12 col-lg-12">
+            <div class="card shadow mb-4">
+              <!-- Card Body -->
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-lg-12">
+                    <table class="table">
+                        <thead class="thead-dark" style="text-align: center;">
+                          <tr>
+                            <th scope="col">userId</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Status</th>
+                          </tr>
+                        </thead>
+                        <tbody style="text-align: center;">
+                          <tr>
+                            <th scope="row">1</th>
+                            <td>1234567890</td>
+                            <td>14 Agustus 2020</td>
+                            <td>
+                                <span class="dot"></span>
+                                <span>Active</span>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- /.container-fluid -->
+
+      </div>
+      <!-- End of Main Content -->
+
+      <!-- Footer -->
+      <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>Copyright &copy; Your Website 2020</span>
+          </div>
+        </div>
+      </footer>
+      <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+  </div>
+  <!-- End of Page Wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fa fa-angle-up"></i>
+  </a>
+
+  <%- include('modals/modalQr.ejs') %>;
+  <%- include('footer/footer.ejs') %>;

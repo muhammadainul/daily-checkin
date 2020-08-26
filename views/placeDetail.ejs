@@ -1,0 +1,119 @@
+<%- include('header/head.ejs') %>
+<body id="page-top">
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+
+    <%- include('header/sidebar.ejs') %>
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+        <%- include('header/topbar.ejs') %>
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+          <!-- Page Heading -->
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">Place Detail</h1>
+          </div>
+
+          <div class="col-xl-12 col-lg-12">
+            <div class="card shadow mb-4">
+              <!-- Card Body -->
+              <div class="card-body">
+                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                    <h1 class="h3 mb-0 text-gray-800">Add QR Place</h1>
+                  </div>
+                <form method="POST" action="/place/qr/add" enctype="multipart/form-data">
+                  <input type="hidden" id="placeId" name="placeId" value="<%= placeId %>">
+                  <div class="form-group">
+                    <label for="exampleFormControlSelect1">Add QR</label>
+                    <select class="form-control" id="dynamicQR">
+                      <option value="static">Static</option>
+                      <option value="dynamic">Dynamic</option>
+                    </select>
+                  </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">QR Type</label>
+                        <select id="type" name="type" class="form-control" id="exampleFormControlSelect1">
+                          <option value="place">Place</option>
+                          <option value="queue">Queue</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+
+                      </div>
+                      <div class="form-group" id="formWhenDynamicSelected" style="display: none;">
+                        <div class="row dates">
+							<div class="col-lg-2">
+								<input type="checkbox" class="form-check-input" id="checkDate" name="checkDate" checked>
+								<label class="form-check-label" for="exampleCheck1">Date</label>
+							</div>
+							<div class="col-lg-3">
+								<input type="date" class="form-control" id="date" name="date" placeholder="Today">
+							</div>
+                        </div>
+                      </div>
+                    <button type="submit" class="btn btn-primary">Add QR</button>
+				  </form>
+              </div>
+            </div>
+          </div>
+
+           <!-- DataTales Example -->
+          <div class="card shadow mb-4">
+			<div class="card-header py-3">
+				<h6 class="m-0 font-weight-bold text-primary">List QR Place</h6>
+			</div>
+			<div class="card-body">
+				<div class="table-responsive">
+					<input type="hidden" id="placeId" name="placeId" value="<%= placeId %>">
+					<table class="table table-bordered table-hovered" id="tableListDetail" width="100%" cellspacing="0">
+						<thead class="thead-dark">
+							<tr>
+								<th>URL</th>
+								<th>Static</th>
+								<th>Date</th>
+								<th>QRCode</th>
+								<th>Action</th>
+							</tr>
+						</thead>
+					</table>
+				</div>
+			</div>
+        </div>
+        <!-- /.container-fluid -->
+
+      </div>
+      <!-- End of Main Content -->
+
+      <!-- Footer -->
+      <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>Copyright &copy; Your Website 2020</span>
+          </div>
+        </div>
+      </footer>
+      <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+  </div>
+  <!-- End of Page Wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fa fa-angle-up"></i>
+  </a>
+
+  <%- include('modals/modalQR.ejs') %>
+  <%- include('modals/modalsQRDelete.ejs') %>
+  <%- include('modals/modals.ejs') %>
+  <%- include('footer/footer.ejs') %>
